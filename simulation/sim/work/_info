@@ -1,0 +1,399 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/quartus_labs/Romanova/Crypto/simulation/sim
+vcrypto
+Z1 !s110 1745604619
+!i10b 1
+!s100 9ab?nAjE]>Nmb>SC=oNo:0
+IdV>VBKO:E`a:X6I?:GJ@C3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1745592492
+Z4 8../../crypto.v
+Z5 F../../crypto.v
+L0 13
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1745604619.000000
+Z8 !s107 ..\..\helpers.v|..\..\Lut.v|../../Lut.v|../../keygen.v|../../cipher.v|../../helpers.v|../../crypto.v|../testbench.v|
+Z9 !s90 -reportprogress|300|../testbench.v|../../crypto.v|../../helpers.v|../../cipher.v|../../keygen.v|../../Lut.v|
+!i113 1
+Z10 tCvgOpt 0
+vfuncF
+R1
+!i10b 1
+!s100 VU6E[YYAl;l[Q`m8i<C>A3
+II@I<K030n;b6og6>;A?;R0
+R2
+R0
+Z11 w1745595529
+Z12 8../../keygen.v
+Z13 F../../keygen.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+nfunc@f
+vfuncL
+R1
+!i10b 1
+!s100 zmY@aBSZ55MAb7]bG3LGC0
+IPg50KnkfgJQoc>4QIYk`i2
+R2
+R0
+Z14 w1745595496
+Z15 8..\..\helpers.v
+Z16 F..\..\helpers.v
+L0 157
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+nfunc@l
+vfuncR
+R1
+!i10b 1
+!s100 Qk@i4lLfSVF]fFD<V9V2^1
+IVhb2M]S^XnFW:m=i8[9GL1
+R2
+R0
+R14
+R15
+R16
+L0 112
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+nfunc@r
+vfuncReverseS
+R1
+!i10b 1
+!s100 kYjKL>h7kKZTd2z?:0`>M2
+IiaoG=dnjb6B9;P`6ZL8_X2
+R2
+R0
+R14
+R15
+R16
+L0 32
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+nfunc@reverse@s
+vfuncS
+R1
+!i10b 1
+!s100 OzZm;8?W38QYfHSfMEB3g1
+I[0h1doDBL<flLQ7>l^R0z1
+R2
+R0
+R14
+R15
+R16
+L0 15
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+nfunc@s
+vfuncX
+R1
+!i10b 1
+!s100 Oz1gonJfk0FL8OeDPT]ES1
+IbHZmS9i;:K@=z_RnIGl`?2
+R2
+R0
+R14
+R15
+R16
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+nfunc@x
+vkey_storage
+R1
+!i10b 1
+!s100 k6OT`iQKQ4B2iZ`]]fCB23
+IdV@GD5L=2nXoTbb4ifm[>3
+R2
+R0
+Z17 w1745604607
+Z18 8../testbench.v
+Z19 F../testbench.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vkuznechik_constants
+R1
+!i10b 1
+!s100 T:1llY^9hYEDiNK6NOHK^3
+I^jhoijbJLXd@2D_Ec??4L0
+R2
+R0
+Z20 w1745579916
+Z21 8../../Lut.v
+Z22 F../../Lut.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vkuznechik_encrypt
+R1
+!i10b 1
+!s100 FD9[Ammdg<zSb:H?a<S<C0
+IIQ?EbBNeJak`0fkBjfz^01
+R2
+R0
+w1745593965
+8../../cipher.v
+F../../cipher.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vkuznechik_keygen
+R1
+!i10b 1
+!s100 _COeXBQeIG0[i7@O7SNO[1
+IMa2HcXfSnVkB=o2G]ED[e0
+R2
+R0
+R11
+R12
+R13
+L0 42
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vkuznechik_l
+R1
+!i10b 1
+!s100 knHOjLjN81V:gJYh4RTlg3
+I`hFQ:>6I1MFBZK3X291BR0
+R2
+R0
+R20
+R21
+R22
+L0 50
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vkuznechik_reverse_s
+R1
+!i10b 1
+!s100 SYTHS:iLR:7GD=7kbX9mV1
+IRH_akb8Gkh<oalnU2`O;@2
+R2
+R0
+R20
+R21
+R22
+L0 159
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vkuznechik_s
+R1
+!i10b 1
+!s100 OnE>1zIS6od3[zYn6F68^1
+I[G4@[KEj9m;3Y<ddM]l=o2
+R2
+R0
+R20
+R21
+R22
+L0 81
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vmaster_key_selector
+R1
+!i10b 1
+!s100 2E3CjJK=k?3lU=7Zl<@lg2
+IoVcUS?Sn@=gODfC3UK9N80
+R2
+R0
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vmultCut
+R1
+!i10b 1
+!s100 <AXK4XdKm2QolQGi?C[eJ3
+ICa[@FUD`W6iP03D_APZJ^1
+R2
+R0
+R14
+R15
+R16
+L0 63
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+nmult@cut
+vmultGF
+R1
+!i10b 1
+!s100 GDfMd06KBD[kY4MC[8nNE3
+IABg:S<f_VL`?3l>Y^=L<^1
+R2
+R0
+R14
+R15
+R16
+L0 74
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+nmult@g@f
+vmultPart
+R1
+!i10b 1
+!s100 D1G6X5bZ@FGdLKAaK<BDc2
+I9X_G5aBKO44<[Pk4SSIUM3
+R2
+R0
+R14
+R15
+R16
+L0 49
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+nmult@part
+vtestbench
+R1
+!i10b 1
+!s100 X20aCMbS499e>FgDOm13l3
+IDP]3X5a^1057:7Cj4ozNZ2
+R2
+R0
+R17
+R18
+R19
+L0 24
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10

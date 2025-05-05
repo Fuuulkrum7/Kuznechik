@@ -1,0 +1,110 @@
+# do ../modelsim_script.tcl
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:10:19 on Apr 25,2025
+# vlog -reportprogress 300 ../testbench.v ../../crypto.v ../../helpers.v ../../cipher.v ../../keygen.v ../../Lut.v 
+# -- Compiling module key_storage
+# -- Compiling module testbench
+# -- Compiling module master_key_selector
+# -- Compiling module crypto
+# -- Compiling module kuznechik_constants
+# -- Compiling module kuznechik_l
+# -- Compiling module kuznechik_s
+# -- Compiling module kuznechik_reverse_s
+# -- Compiling module funcX
+# -- Compiling module funcS
+# -- Compiling module funcReverseS
+# -- Compiling module multPart
+# -- Compiling module multCut
+# -- Compiling module multGF
+# -- Compiling module funcR
+# -- Compiling module funcL
+# -- Compiling module kuznechik_encrypt
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** while parsing file included at ..\..\helpers.v(1)
+# ** at ..\..\Lut.v(2): (vlog-2275) 'kuznechik_constants' already exists and will be overwritten.
+# -- Compiling module kuznechik_constants
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** while parsing file included at ..\..\helpers.v(1)
+# ** at ..\..\Lut.v(50): (vlog-2275) 'kuznechik_l' already exists and will be overwritten.
+# -- Compiling module kuznechik_l
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** while parsing file included at ..\..\helpers.v(1)
+# ** at ..\..\Lut.v(81): (vlog-2275) 'kuznechik_s' already exists and will be overwritten.
+# -- Compiling module kuznechik_s
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** while parsing file included at ..\..\helpers.v(1)
+# ** at ..\..\Lut.v(159): (vlog-2275) 'kuznechik_reverse_s' already exists and will be overwritten.
+# -- Compiling module kuznechik_reverse_s
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** at ..\..\helpers.v(3): (vlog-2275) 'funcX' already exists and will be overwritten.
+# -- Compiling module funcX
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** at ..\..\helpers.v(15): (vlog-2275) 'funcS' already exists and will be overwritten.
+# -- Compiling module funcS
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** at ..\..\helpers.v(32): (vlog-2275) 'funcReverseS' already exists and will be overwritten.
+# -- Compiling module funcReverseS
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** at ..\..\helpers.v(49): (vlog-2275) 'multPart' already exists and will be overwritten.
+# -- Compiling module multPart
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** at ..\..\helpers.v(63): (vlog-2275) 'multCut' already exists and will be overwritten.
+# -- Compiling module multCut
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** at ..\..\helpers.v(74): (vlog-2275) 'multGF' already exists and will be overwritten.
+# -- Compiling module multGF
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** at ..\..\helpers.v(112): (vlog-2275) 'funcR' already exists and will be overwritten.
+# -- Compiling module funcR
+# ** Warning: ** while parsing file included at ../../keygen.v(1)
+# ** at ..\..\helpers.v(157): (vlog-2275) 'funcL' already exists and will be overwritten.
+# -- Compiling module funcL
+# -- Compiling module funcF
+# -- Compiling module kuznechik_keygen
+# ** Warning: ../../Lut.v(2): (vlog-2275) 'kuznechik_constants' already exists and will be overwritten.
+# -- Compiling module kuznechik_constants
+# ** Warning: ../../Lut.v(50): (vlog-2275) 'kuznechik_l' already exists and will be overwritten.
+# -- Compiling module kuznechik_l
+# ** Warning: ../../Lut.v(81): (vlog-2275) 'kuznechik_s' already exists and will be overwritten.
+# -- Compiling module kuznechik_s
+# ** Warning: ../../Lut.v(159): (vlog-2275) 'kuznechik_reverse_s' already exists and will be overwritten.
+# -- Compiling module kuznechik_reverse_s
+# 
+# Top level modules:
+# 	testbench
+# 	funcReverseS
+# End time: 21:10:19 on Apr 25,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 16
+# vsim work.testbench 
+# Start time: 21:10:19 on Apr 25,2025
+# Loading work.testbench
+# Loading work.crypto
+# Loading work.master_key_selector
+# Loading work.kuznechik_keygen
+# Loading work.kuznechik_constants
+# Loading work.funcF
+# Loading work.funcX
+# Loading work.funcS
+# Loading work.funcL
+# Loading work.key_storage
+# Loading work.kuznechik_encrypt
+# Loading work.kuznechik_s
+# Loading work.funcR
+# Loading work.kuznechik_l
+# Loading work.multGF
+# Loading work.multPart
+# Loading work.multCut
+# ** Warning: (vsim-3015) ../../crypto.v(93): [PCDPC] - Port size (128) does not match connection size (129) for port 'q'. The port definition is at: ../../crypto.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/storage_round File: ../../crypto.v
+# ** Warning: (vsim-3015) ../../crypto.v(132): [PCDPC] - Port size (128) does not match connection size (129) for port 'round_key'. The port definition is at: ../../cipher.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/main File: ../../cipher.v
+# ** Warning: Design size of 5695 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
+# ==== Кузнечик: запуск симуляции ====
+# 0 ps
+# 12430950 ns
+
+
+# End time: 21:11:42 on Apr 25,2025, Elapsed time: 0:01:23
+# Errors: 0, Warnings: 3
