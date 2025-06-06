@@ -158,16 +158,16 @@ set_location_assignment PIN_Y3 -to GPIO[33]
 set_location_assignment PIN_AB2 -to GPIO[34]
 set_location_assignment PIN_AA2 -to GPIO[35]
 
-set_global_assignment -name VERILOG_FILE crypto.v
-set_global_assignment -name VERILOG_FILE Lut.v
-set_global_assignment -name VERILOG_FILE helpers.v
+set_global_assignment -name VERILOG_FILE source/crypto.v
+set_global_assignment -name VERILOG_FILE source/Lut.v
+set_global_assignment -name VERILOG_FILE source/helpers.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name QIP_FILE key_storage.qip
-set_global_assignment -name VERILOG_FILE cipher.v
-set_global_assignment -name SYSTEMVERILOG_FILE helpers.sv
-set_global_assignment -name SYSTEMVERILOG_FILE keygen.sv
+set_global_assignment -name QIP_FILE source/key_storage.qip
+set_global_assignment -name VERILOG_FILE source/cipher.v
+set_global_assignment -name SYSTEMVERILOG_FILE source/helpers.sv
+set_global_assignment -name SYSTEMVERILOG_FILE source/keygen.sv
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
