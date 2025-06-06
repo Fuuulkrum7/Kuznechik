@@ -1,0 +1,11 @@
+*.vvp
+*.vcd
+
+output_files/
+incremental_db/
+greybox_tmp/
+db/
+
+.vscode/
+
+*.*bak

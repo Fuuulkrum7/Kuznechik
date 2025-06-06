@@ -168,4 +168,7 @@ set_global_assignment -name QIP_FILE key_storage.qip
 set_global_assignment -name VERILOG_FILE cipher.v
 set_global_assignment -name SYSTEMVERILOG_FILE helpers.sv
 set_global_assignment -name SYSTEMVERILOG_FILE keygen.sv
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
