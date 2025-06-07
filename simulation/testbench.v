@@ -78,9 +78,15 @@ module testbench;
 
         // Инициализация ключа: выбор key0
         SW[0] = 0;
-        #100; 
+        #100;
         KEY = 2'b01;
         // Ждём пока сгенерируются ключи, заодно наблюдаем LEDR
+        wait (dut.keyset == 0);
+        #40;
+        wait (dut.keyset == 0);
+        SW[1] = 1;
+        #20;
+        SW[1] = 0;
         wait (dut.cipher_ready == 1);
         $display("=== Ready ===");
         $display("Result: %h", LEDR);

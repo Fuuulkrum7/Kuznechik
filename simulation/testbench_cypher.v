@@ -3,7 +3,8 @@ module testbench_cypher;
 
     reg clk = 0;
     reg rst_n;
-    reg en;
+    reg put = 0;
+    reg keyset = 0;
     reg [127:0] in_data;
     reg [127:0] round_key;
     reg key_valid;
@@ -22,14 +23,19 @@ module testbench_cypher;
     kuznechik_encrypt uut (
         .clk(clk),
         .rst_n(rst_n),
-        .en(en),
-        .in_data(in_data),
-        .round_key(round_key),
+
+        .keyset(keyset),
         .key_valid(key_valid),
-        .key_next(key_next),
+        .round_key(round_key),
+
+        .put(put),
+        .in_data(in_data),
+
         .out_data(out_data),
         .ready(ready)
     );
+
+    always #5 clk = ~clk;
 
     initial begin
         $dumpfile("encrypt.vcd");
@@ -38,11 +44,12 @@ module testbench_cypher;
         // Инициализация
         clk = 0;
         rst_n = 0;
-        en = 0;
+        put = 0;
         key_valid = 0;
         round_key = 0;
         started = 0;
         done = 0;
+        keyset = 0;
 
         // Ключи
         keys[0] = 128'h8899aabbccddeeff0011223344556677;
@@ -59,34 +66,38 @@ module testbench_cypher;
         // Ожидаемый результат
         expected_out = 128'h8420b74e80d58e6c6dbac4ee0f1c408f;
 
-        #12 rst_n = 1;
+        #5; keyset = 1;
+        #10 rst_n = 1;
     end
-
-    always #5 clk = ~clk;
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             i <= 0;
-            en <= 0;
+            put <= 0;
             key_valid <= 0;
             in_data <= 0;
-            round_key <= 0;
             started <= 0;
             done <= 0;
         end else begin
             // Старт шифрования
-            key_valid <= 0;
             if (!started) begin
                 in_data <= 128'h1122334455667700ffeeddccbbaa9988;
-                en <= 1;
-                started <= 1;
+                started <= 1'b1;
             end
 
-            // Подать следующий ключ при key_next
-            if (key_next && i < 10) begin
+            if (i < 10 && keyset) begin
+                key_valid <= 1'b1;
                 round_key <= keys[i];
-                key_valid <= 1;
                 i <= i + 1;
+            end
+            else if (keyset) begin
+                key_valid <= 0;
+                keyset <= 0;
+                put <= 1'b1;
+            end
+
+            if (put) begin
+                put <= 1'b0;
             end
 
             // Проверка результата

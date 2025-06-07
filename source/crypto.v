@@ -26,12 +26,9 @@ module crypto(
     reg en, sel;
 
     wire ready, full_ready;
-    reg [3:0] key_addr;
-    reg [3:0] read_addr;
 
     wire [255:0] round_key;
     reg  [255:0] round_key_d;
-    wire [127:0] curent_key;
 
     reg [1:0] key_phase; // 0: ожидаем пару, 1: отдали key1, 2: отдали key2
 
@@ -45,16 +42,6 @@ module crypto(
             sel <= SW[0];
         end
         else if (full_ready) en <= 1'b0;
-    end
-
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            key_addr <= 3'b0;
-        end
-        else if (sel != SW[0]) key_addr <= 3'b0;
-        else if (|key_phase) begin
-            key_addr <= key_addr + 1;
-        end
     end
 
     always @(posedge clk or negedge rst_n) begin
@@ -91,24 +78,14 @@ module crypto(
         .full_ready (full_ready)
     );
 
-    key_storage storage_round (
-        clk,
-        round_key_d[255:128],
-        key_addr,
-        read_addr + (cipher_key_next & start_rounds),
-        (|key_phase),
-        curent_key
-    );
-
     /*-------------------------------------------------------------------------------*/
+
+    wire keyset = !full_ready || (|key_phase);
 
     wire [127:0] plain_text = GPIO;
     reg          cipher_en;
-    reg          start_rounds;
 
     wire         cipher_ready;
-    wire         cipher_key_next;
-    reg          key_valid;
 
     always @(posedge clk or negedge rst_n) begin
     if (!rst_n)
@@ -119,32 +96,14 @@ module crypto(
         cipher_en <= 1'b0;
     end
 
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n)               start_rounds <= 1'b0;
-        else if (en)              start_rounds <= 1'b0;
-        else if (cipher_key_next) start_rounds <= 1'b1;
-    end
-
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n)                                read_addr <= 3'b0;
-        else if (en)                               read_addr <= 3'b0;
-        else read_addr <= read_addr + (start_rounds && cipher_key_next);
-    end
-
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n)               key_valid <= 1'b0;
-        else if (cipher_key_next) key_valid <= 1'b1;
-        else                      key_valid <= 1'b0;
-    end
-
     kuznechik_encrypt main(
         .clk        (clk),
         .rst_n      (rst_n),
-        .en         (cipher_en),            // запуск
+        .keyset     (keyset),
+        .key_valid  (|key_phase),
+        .round_key  (round_key_d[255:128]),           // текущий ключ
+        .put        (cipher_en & SW[1]),
         .in_data    (plain_text),           // входной текст
-        .round_key  (curent_key),   // текущий ключ
-        .key_valid  (key_valid),
-        .key_next   (cipher_key_next),
         .out_data   (LEDR),
         .ready      (cipher_ready)          // готово
     );

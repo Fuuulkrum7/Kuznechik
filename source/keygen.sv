@@ -1,34 +1,5 @@
 // `define PIPELINED
 
-`ifdef PIPELINED
-module shift # (
-    parameter WIDTH = 128,
-    parameter DEPTH = 16
-) (
-    input clk,
-    input rst_n,
-    input  [WIDTH - 1 : 0] data,
-    output [WIDTH - 1 : 0] res
-);
-
-    logic [WIDTH - 1 : 0] arr [0 : DEPTH - 1];
-    integer i;
-
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            for (i = 0; i < DEPTH; i++) arr[i] <= { WIDTH{1'b0} };
-        end
-        else begin
-            arr[0] <= data;
-            for (i = 1; i < DEPTH; i++) arr[i] <= arr[i - 1];
-        end
-    end
-
-    assign res = arr[DEPTH - 1];
-
-endmodule
-`endif
-
 module funcF (
     input  logic         clk,
     input  logic         rst_n,
