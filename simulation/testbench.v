@@ -50,16 +50,20 @@ module testbench;
     reg  [127:0] GPIO = 128'h000102030405060708090A0B0C0D0E0F;
 
     wire [127:0] LEDR;
+    wire cipher_ready;
+    wire keys_ready;
 
     // Подключаем DUT (Device Under Test)
-    crypto dut (
+    crypto_simle dut (
         .ADC_CLK_10      (ADC_CLK_10),
         .MAX10_CLK1_50   (MAX10_CLK1_50),
         .MAX10_CLK2_50   (MAX10_CLK2_50),
         .KEY             (KEY),
         .SW              (SW),
         .GPIO            (GPIO),
-        .LEDR            (LEDR)
+        .LEDR            (LEDR),
+        .cipher_ready    (cipher_ready),
+        .keys_ready      (keys_readys)
     );
 
     // Генерация тактового сигнала
